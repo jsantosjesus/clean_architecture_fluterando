@@ -4,6 +4,7 @@ import 'package:clean_architecture_fluterando/modules/search/domain/usecase/sear
 import 'package:clean_architecture_fluterando/modules/search/external/datasources/github_datasource.dart';
 import 'package:clean_architecture_fluterando/modules/search/infra/datasources/search_datasource.dart';
 import 'package:clean_architecture_fluterando/modules/search/infra/repositories/search_repository_impl.dart';
+import 'package:clean_architecture_fluterando/modules/search/presenter/search/search_page.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -17,5 +18,7 @@ class AppModular extends Module {
   }
 
   @override
-  void routes(r) {}
+  void routes(r) {
+    r.child('/', child: (context) => const SearchPage());
+  }
 }

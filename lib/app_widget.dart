@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({super.key});
@@ -6,13 +7,13 @@ class AppWidget extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        useMaterial3: false,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      routerConfig: Modular.routerConfig,
     );
   }
 }
