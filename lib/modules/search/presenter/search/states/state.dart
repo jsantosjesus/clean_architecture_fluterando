@@ -3,17 +3,17 @@ import 'package:clean_architecture_fluterando/modules/search/domain/errors/error
 
 abstract class SearchState {}
 
-class SearchStateStart implements SearchState {}
+class SearchStateStart extends SearchState {}
 
-class SearchStateLoading implements SearchState {}
+class SearchStateLoading extends SearchState {}
 
-class SearchStateError implements SearchState {
+class SearchStateError extends SearchState {
   final FailureSearch error;
 
   SearchStateError(this.error);
 }
 
-class SearchStateSuccess implements SearchState {
+class SearchStateSuccess extends SearchState {
   final List<ResultSearch> list;
 
   SearchStateSuccess(this.list);
