@@ -20,7 +20,7 @@ class ResultSearchModel extends ResultSearch {
 
   static ResultSearchModel fromMap(Map<String, dynamic> map) {
     return ResultSearchModel(
-        title: map['login'], content: map['node_id'], img: map['type']);
+        title: map['login'], content: map['type'], img: map['avatar_url']);
   }
 
   String toJson() => json.encode(toMap());

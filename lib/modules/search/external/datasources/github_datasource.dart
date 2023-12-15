@@ -6,7 +6,7 @@ import 'package:dio/dio.dart';
 
 extension on String {
   normalize() {
-    return this.replaceAll(" ", "+");
+    return replaceAll(" ", "+");
   }
 }
 

@@ -39,4 +39,16 @@ void main() {
         ]));
     await cubit.searchByText(searchText);
   });
+  test('shold to return a start state', () async {
+    when(() => usecase.call(any()))
+        .thenAnswer((_) async => Left(InvalidTextError()));
+
+    expectLater(
+        cubit.stream,
+        emitsInOrder([
+          isA<SearchStateLoading>(),
+          isA<SearchStateStart>(),
+        ]));
+    await cubit.searchByText("");
+  });
 }
